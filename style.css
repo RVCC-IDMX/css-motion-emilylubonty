@@ -30,9 +30,9 @@
 
 /* Color Properties */
 :root {
-  --color-background: #9A8670;
+  --color-background: #2C261E;
   --color-text: #E8D3D6;
-  --color-primary: #2C261E;
+  --color-primary: #9A8670;
   --color-secondary: #795434;
   --color-accent: #5A3D29;
 }
@@ -40,19 +40,20 @@
 /* Typography */
 @font-face {
   font-family: "FrederickatheGreat";
-  src: url("FrederickatheGreat-Regular.woff2") format("woff2");
+  src: local("FrederickatheGreat"), url("fonts/FrederickatheGreat-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Limelight";
-  src: url("Limelight-Regular.woff2") format("woff2");
+  src: local("Limelight"), url("fonts/Limelight-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 :root {
-  --font-heading: 'FrederickatheGreat', sans-serif;
-  --font-body: 'Limelight', sans-serif;
+  --font-body: 'FrederickatheGreat', cursive;
+  --font-header: 'Limelight', cursive;
+  
 }
 
 /* ============================================
@@ -68,6 +69,9 @@
    PAGE STRUCTURE
    ============================================ */
 body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -87,7 +91,8 @@ header {
 }
 
 header h1 {
-  /* You'll add: font-size, font-weight, color, margin */
+  color: var(--color-text);
+  font-family: var(--font-header);
 }
 
 header .subtitle {
