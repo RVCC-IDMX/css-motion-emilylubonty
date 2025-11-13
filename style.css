@@ -28,6 +28,33 @@
   --card-height: 500px;
 }
 
+/* Color Properties */
+:root {
+  --color-background: #9A8670;
+  --color-text: #E8D3D6;
+  --color-primary: #2C261E;
+  --color-secondary: #795434;
+  --color-accent: #5A3D29;
+}
+
+/* Typography */
+@font-face {
+  font-family: "FrederickatheGreat";
+  src: url("FrederickatheGreat-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Limelight";
+  src: url("Limelight-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  --font-heading: 'FrederickatheGreat', sans-serif;
+  --font-body: 'Limelight', sans-serif;
+}
+
 /* ============================================
    BASIC RESET
    ============================================ */
