@@ -313,7 +313,8 @@ main {
   width: var(--card-width);
   height: var(--card-height);
   position: relative;
-
+  transform-style: preserve-3d;
+  transition: transform 600ms ease-in-out;
   /* This enables 3D transforms for child elements */
   /* You'll add: transform-style: preserve-3d */
   /* You'll add: transition for the rotation */
@@ -325,7 +326,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-
+  backface-visibility: hidden;
   /* Prevent back face from showing through */
   /* You'll add: backface-visibility: hidden */
 
@@ -336,28 +337,59 @@ main {
   align-items: center;
   padding: var(--space-lg);
   gap: var(--space-md);
-
+  text-align: center;
+  background-color: var(--color-background-alt);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  color: var(--color-text);
   /* You'll add: background, border, border-radius, shadow, colors */
 }
 
 /* Front face - visible by default */
 .card-front {
-  /* You'll add: any front-specific styling */
+  /* Front face styling. Add layout for image. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+  object-fit: cover;
+  gap: var(--space-md);
+  background-color: var(--color-background);
+  text-align: center;
+  box-shadow: var(--color-shadow) 2px 2px 8px;
+}
+
+.feature-image {
+  width: 80%;
+  height: auto;
+  max-width: 320px;
+  border-radius: 12px;
+  display: block;
 }
 
 /* Back face - rotated 180 degrees */
 .card-back {
-  /* You'll add: transform: rotateY(180deg) to flip this face */
+  transform: rotateY(180deg);
+  background-color: var(--color-background);
+  text-align: center;
+  box-shadow: var(--color-shadow) 2px 2px 8px;
   /* You'll add: any back-specific styling */
 }
 
-/* Hover/focus state for card */
-/* You'll add a rule like:
-   .card-container:hover .card-inner,
-   .card-container:focus-within .card-inner {
-     transform: rotateY(180deg);
-   }
-*/
+.card-container:hover .card-inner, 
+.card-container:focus-within .card-inner {
+  transform: rotateY(180deg);
+  transition: transform 600ms ease-in-out;
+}
+
+.card-container:focus .card-inner, 
+.card-container:focus-within .card-inner {
+  transform: rotateY(180deg);
+  transition: transform 600ms ease-in-out;
+}
+
 
 /* ============================================
    SECTION 4: ACCESSIBILITY & REFLECTION
