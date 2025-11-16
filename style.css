@@ -36,7 +36,7 @@
   --color-text: #ffffff;
   --color-primary: #ddd7d0;
   --color-secondary: #85664b;
-  --color-accent: #4b362a;
+  --color-accent: #574439;
   --color-shadow: #a07b62;  
   --color-hover: #523c2f;
 }
@@ -255,13 +255,40 @@ main {
   */
 }
 
-.timing-button-timing-one:hover {
+.timing-button.timing-one:hover {
+  background-color: var(--color-hover);
   transform: translateY(-10px) scale(1.05);
-  transition: transform 350ms ease;
+  transition: transform 1s linear;
+}
+
+.timing-button.timing-one:focus {
+  background-color: var(--color-hover);
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 1s linear;
+}
+
+.timing-button.timing-two:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 500ms ease-out;
+}
+
+.timing-button.timing-two:focus {
+  background-color: var(--color-hover);
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 500ms ease-out;
 }
 
 .timing-label {
-  /* You'll add: font-size, color, font-weight */
+  font-size: var(--fs--1);
+  color: var(--color-text); 
+  font-family: var(--font-body);
+}
+
+.motion-caption {
+  text-align: center;
+  font-size: var(--fs-0);
+  line-height: 2;
 }
 
 /* ============================================
