@@ -285,11 +285,7 @@ main {
   font-family: var(--font-body);
 }
 
-.motion-caption {
-  text-align: center;
-  font-size: var(--fs-0);
-  line-height: 2;
-}
+
 
 /* ============================================
    SECTION 3: FEATURE CARD (3D FLIP)
@@ -336,7 +332,6 @@ main {
   justify-content: center;
   align-items: center;
   padding: var(--space-lg);
-  gap: var(--space-md);
   text-align: center;
   background-color: var(--color-background-alt);
   border: 2px solid var(--color-border);
@@ -349,22 +344,16 @@ main {
 /* Front face - visible by default */
 .card-front {
   /* Front face styling. Add layout for image. */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  width: auto;
-  object-fit: cover;
+  /* Removed height/width auto so it matches .card-back size (inherits from .card-face) */
   gap: var(--space-md);
   background-color: var(--color-background);
-  text-align: center;
   box-shadow: var(--color-shadow) 2px 2px 8px;
 }
 
 .feature-image {
-  width: 80%;
+  width: 100%;
   height: auto;
-  max-width: 320px;
+  max-width: auto;
   border-radius: 12px;
   display: block;
 }
@@ -375,6 +364,8 @@ main {
   background-color: var(--color-background);
   text-align: center;
   box-shadow: var(--color-shadow) 2px 2px 8px;
+  text-align: center;
+  line-height: 2;
   /* You'll add: any back-specific styling */
 }
 
@@ -407,11 +398,20 @@ main {
 
 .accessibility-note h3,
 .reflection-text h3 {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  text-align: center;
   /* You'll add: font-size, font-weight, color */
 }
 
 .accessibility-note p,
 .reflection-text p {
+  font-size: var(--fs-0);
+  line-height: 2;
+  color: var(--color-text);
+  text-align: center;
+  padding: 5px;
   /* You'll add: font-size, line-height, color */
 }
 
@@ -421,7 +421,8 @@ main {
    ============================================ */
 .motion-caption {
   text-align: center;
-  /* You'll add: font-size, color, line-height, font-style */
+  font-size: var(--fs-0);
+  line-height: 2;
 }
 
 /* ============================================
@@ -482,26 +483,6 @@ footer p {
    This is where YOU implement accessibility
    ============================================ */
 
-/*
-  You MUST add a prefers-reduced-motion media query here.
-
-  Example structure:
-
-  @media (prefers-reduced-motion: reduce) {
-
-    // Remove or modify transitions for all interactive elements
-    .interactive-element,
-    .timing-button,
-    .card-inner {
-      // Either remove transition entirely
-      // Or use very brief opacity fade (under 200ms)
-    }
-
-    // For the card: instant flip or opacity crossfade
-    // See tutorial for acceptable reduced-motion behaviors
-
-  }
-*/
 
 @media (prefers-reduced-motion: reduce) {
  *, 
