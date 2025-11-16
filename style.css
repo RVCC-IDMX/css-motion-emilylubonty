@@ -391,7 +391,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-
+  background-color: var(--color-background);
+  padding: var(--space-lg);
+  border: 2px solid var(--color-border);
+  border-radius: 2px;
+  color: var(--color-text);
   /* You'll add: background, padding, border, border-radius */
 }
 
