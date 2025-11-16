@@ -30,7 +30,7 @@
 
 /* Color Properties */
 :root {
-  --color-background: #2C261E;
+  --color-background: #29231c;
   --color-background-alt: #40372E;
   --color-border: #584e45;
   --color-text: #ffffff;
@@ -185,7 +185,6 @@ main {
   align-items: center;
   padding: var(--space-xl);
   background-color: var(--color-background);
-  /* You'll add: background or border to define the demo area */
 }
 
 .interactive-element {
@@ -195,12 +194,6 @@ main {
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
   
-  /* You'll add:
-     - All styling (colors, fonts, borders, etc.)
-     - Transform and transition properties
-     - Hover and focus states with motion
-     - prefers-reduced-motion alternative
-  */
 }
 
 .interactive-element:hover {
@@ -231,8 +224,7 @@ main {
   gap: var(--space-lg);
   justify-content: center;
   padding: var(--space-lg);
-
-  /* You'll add: background or border to define comparison area */
+  background-color: var(--color-background);
 }
 
 .comparison-item {
@@ -250,7 +242,10 @@ main {
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
   width: 100%;
-
+  background-color: var(--color-background-alt);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  border: var(--color-border) 2px solid;
   /* You'll add:
      - All styling (colors, fonts, borders, etc.)
      - Same transform for both buttons
@@ -258,6 +253,11 @@ main {
      - DIFFERENT timing functions (timing-one vs timing-two)
      - prefers-reduced-motion alternative
   */
+}
+
+.timing-button-timing-one:hover {
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 350ms ease;
 }
 
 .timing-label {
