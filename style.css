@@ -35,8 +35,8 @@
   --color-text: #ffffff;
   --color-primary: #ddd7d0;
   --color-secondary: #85664b;
-  --color-accent: #5A3D29;
-  --color-shadow: #9c8f71;  
+  --color-accent: #4b362a;
+  --color-shadow: #a07b62;  
 }
 
 /* Typography */
@@ -70,8 +70,6 @@
 
 }
 
-
-
 /* ============================================
    BASIC RESET
    ============================================ */
@@ -102,8 +100,8 @@ body {
    ============================================ */
 header {
   font-size: var(--fs-1);
-  border: var(--space-xs) solid var(--color-primary);
-  border-radius: 20px;
+  border: 3px solid var(--color-primary);
+  border-radius: 120px;
   background-color: var(--color-accent);
   color: var(--color-text);
   padding: var(--space-xl) var(--container-padding);
@@ -164,11 +162,12 @@ main {
 
   padding: var(--space-sm);
   text-align: center;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background);
   font-size: var(--fs-2);
   font-family: var(--font-header);
   font-weight: 400;
   color: var(--color-text);
+  border-bottom: 2px solid var(--color-primary);
 
   /* You'll add: font-size, font-weight, color, text-align */
 }
@@ -188,17 +187,22 @@ main {
 }
 
 .interactive-element {
-  /* Basic button reset */
-  border: none;
+  border: var(--color-primary) 2px solid;
+  background-color: var(--color-accent);
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
-
+  
   /* You'll add:
      - All styling (colors, fonts, borders, etc.)
      - Transform and transition properties
      - Hover and focus states with motion
      - prefers-reduced-motion alternative
   */
+}
+
+.interactive-element:hover {
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 300ms ease;
 }
 
 /* ============================================
@@ -354,11 +358,14 @@ footer {
   padding: var(--space-lg) var(--container-padding);
   margin-top: auto;
   text-align: center;
-
+  background-color: var(--color-background-alt);
+  border-top: 2px solid var(--color-primary);
   /* You'll add: background, border-top, color */
 }
 
 footer p {
+  font-size: var(--fs--1);
+  color: var(--color-text);
   /* You'll add: font-size, color */
 }
 
