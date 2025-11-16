@@ -32,11 +32,13 @@
 :root {
   --color-background: #2C261E;
   --color-background-alt: #40372E;
+  --color-border: #584e45;
   --color-text: #ffffff;
   --color-primary: #ddd7d0;
   --color-secondary: #85664b;
   --color-accent: #4b362a;
   --color-shadow: #a07b62;  
+  --color-hover: #523c2f;
 }
 
 /* Typography */
@@ -187,7 +189,8 @@ main {
 }
 
 .interactive-element {
-  border: var(--color-primary) 2px solid;
+  border: var(--color-border) 2px solid;
+  border-radius: 20px;
   background-color: var(--color-accent);
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
@@ -201,8 +204,20 @@ main {
 }
 
 .interactive-element:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-10px) scale(1.10);
+  transition: transform 300ms ease;
+}
+
+.interactive-element:focus {
   transform: translateY(-10px) scale(1.05);
   transition: transform 300ms ease;
+}
+
+.motion-caption {
+  text-align: center;
+  font-size: var(--fs-0);
+  line-height: 2;
 }
 
 /* ============================================
@@ -428,6 +443,15 @@ footer p {
 
   }
 */
+
+@media (prefers-reduced-motion: reduce) {
+ *, 
+ *::before,
+ *::after {
+    transition: none !important
+  }
+}
+
 
 /* ============================================
    NOTES FOR STUDENTS
