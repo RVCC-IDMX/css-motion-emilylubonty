@@ -440,7 +440,17 @@ footer {
 footer p {
   font-size: var(--fs--1);
   color: var(--color-text);
+  text-align: center;
+  margin: 0;
   /* You'll add: font-size, color */
+}
+
+footer a {
+  font-size: var(--fs--1);
+  color: var(--color-primary);
+  line-height: 2;
+  border-bottom: 2px solid var(--color-primary);
+  text-decoration: none;
 }
 
 /* ============================================
@@ -481,7 +491,6 @@ footer p {
    REDUCED MOTION SUPPORT
    This is where YOU implement accessibility
    ============================================ */
-
 
 @media (prefers-reduced-motion: reduce) {
  *, 
